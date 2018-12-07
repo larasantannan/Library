@@ -11,4 +11,6 @@ public class Biblioteca {
 		}
 		return instancia;
 	}	
+	
+	public void consultarLivro(String livro) {}
 }

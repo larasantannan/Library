@@ -1,10 +1,12 @@
 
 public class ConsultaLivroCmd implements Cmd {
-
+	 
 	@Override
 	public void executar(String usuario, String livro) {
-		// TODO Auto-generated method stub
+		livro = usuario;
 		
+		Biblioteca blib = Biblioteca.obterInstancia();
+		blib.consultarLivro(livro);
 	}
 
 }
