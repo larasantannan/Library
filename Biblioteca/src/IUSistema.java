@@ -21,8 +21,8 @@ public class IUSistema {
 		
 	}
 	
-	private String[] tratarDados() { // Pode retornar um vetor?
-		System.out.println("Digite o comando desejado."); // Apagar linha
+	private static void tratarDados(String[] parametros) { // É assim que passa por referência em Java?
+		System.out.println("Digite o comando desejado.\n"); // Apagar linha
 		
 		// Ler a entrada
 		Scanner sc = new Scanner(System.in);
@@ -36,19 +36,21 @@ public class IUSistema {
 	    	listaParametros.add(st.nextToken());
 	    }
 	    
-	    String[] parametros;
-	    parametros = new String[3];
-	    parametros[0] = null;
-	    parametros[1] = null;
-	    parametros[2] = null;
-	    
 	    int i = 0;
 	    for (Iterator iterator = listaParametros.iterator(); iterator.hasNext();) {
 	    	parametros[i] = (String)iterator.next();
 			i += 1;
 		}
+	}
+	
+	public static void main(String[] args) {
+		String[] parametros;
+	    parametros = new String[3];
+	    parametros[0] = null;
+	    parametros[1] = null;
+	    parametros[2] = null;
 	    
-	    return parametros;
+	    tratarDados(parametros);
 	}
 			
 }
