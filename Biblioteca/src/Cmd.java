@@ -1,6 +1,6 @@
 
 public interface Cmd {
 
-	public void executar();
+	public void executar(String usuario, String livro);
 	
 }

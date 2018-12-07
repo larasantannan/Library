@@ -7,9 +7,9 @@ import java.util.StringTokenizer;
 
 public class IUSistema {
 
-	private HashMap<String, Object> cmds = new HashMap<String, Object>();
+	private static HashMap<String, Object> cmds = new HashMap<String, Object>();
 	
-	private void addCmds() {
+	private static void addCmds() {
 		cmds.put("emp", new EmprestimoCmd());
 		cmds.put("dev", new DevolucaoCmd());
 		cmds.put("res", new ReservaCmd());
@@ -38,12 +38,25 @@ public class IUSistema {
 	    
 	    int i = 0;
 	    for (Iterator iterator = listaParametros.iterator(); iterator.hasNext();) {
-	    	parametros[i] = (String)iterator.next();
+	    	parametros[i] = (String) iterator.next();
 			i += 1;
 		}
 	}
 	
+	private static void executarComando(String[] parametros) {
+		String comando, usuarioId, livroId;
+		comando = parametros[0];
+		usuarioId = parametros[1];
+		livroId = parametros[2];
+		
+		Cmd c = (Cmd) cmds.get(comando);
+		c.executar(usuarioId, livroId);
+	}
+	
 	public static void main(String[] args) {
+		
+		addCmds();
+		
 		String[] parametros;
 	    parametros = new String[3];
 	    parametros[0] = null;
@@ -51,6 +64,8 @@ public class IUSistema {
 	    parametros[2] = null;
 	    
 	    tratarDados(parametros);
+	    
+	    executarComando(parametros);
 	}
 			
 }
