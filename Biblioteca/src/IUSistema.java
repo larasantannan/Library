@@ -10,6 +10,7 @@ public class IUSistema {
 	private static HashMap<String, Object> cmds = new HashMap<String, Object>();
 	
 	private static void addCmds() {
+		
 		cmds.put("emp", new EmprestimoCmd());
 		cmds.put("dev", new DevolucaoCmd());
 		cmds.put("res", new ReservaCmd());
@@ -21,7 +22,8 @@ public class IUSistema {
 		
 	}
 	
-	private static void tratarDados(String[] parametros) { // É assim que passa por referência em Java?
+	private static void tratarDados(String[] parametros) {
+		
 		System.out.println("Digite o comando desejado.\n"); // Apagar linha
 		
 		// Ler a entrada
@@ -44,6 +46,7 @@ public class IUSistema {
 	}
 	
 	private static void executarComando(String[] parametros) {
+		
 		String comando, usuarioId, livroId;
 		comando = parametros[0];
 		usuarioId = parametros[1];
