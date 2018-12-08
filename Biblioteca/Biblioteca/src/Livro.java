@@ -32,7 +32,7 @@ public class Livro implements SujeitoObservavel{
 	public String getId() {
 		return this.id;
 	}
-  
+	
 	public String getTitulo() {
 		return this.titulo;
 	}
@@ -66,7 +66,8 @@ public class Livro implements SujeitoObservavel{
         for (int i = 0; i < observadores.size(); i++) {
             Usuario usuario = (Usuario)observadores.get(i);
 		usuario.update();
-        }
-    }
 	}
+    }
+}
+
 	
