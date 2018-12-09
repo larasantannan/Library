@@ -1,9 +1,6 @@
-package Biblioteca.src;
-
 import java.util.ArrayList;
 
-
-public class Livro implements SujeitoObservavel{
+public class Livro implements SujeitoObservavel {
 
 	private String id;
 	private String titulo;
@@ -11,9 +8,10 @@ public class Livro implements SujeitoObservavel{
 	private String[] autores;
 	private String edicao;
 	private String anoPublicacao;
-        private ArrayList observadores;
-        private int quantidadeReservas;
-	
+    private int quantidadeReservas;
+    private int exemplares;
+    private ArrayList observadores;
+    
 	public Livro(String codigo, String titulo, String editora, String[] autores, String edicao, String anoPublicacao) {
 		
 		this.id = codigo;
@@ -37,20 +35,20 @@ public class Livro implements SujeitoObservavel{
 		return this.titulo;
 	}
         
-        public void setQuantidadeReservas(){
-            this.quantidadeReservas++;
-            if(this.quantidadeReservas > 2){
-                this.notificarObservador();
-            }
+    public void setQuantidadeReservas(){
+    	this.quantidadeReservas++;
+        if(this.quantidadeReservas > 2){
+        	this.notificarObservador();
         }
+    }
         
-        public int getQuantidadeReservas(){
-            return this.quantidadeReservas;
-        }
+    public int getQuantidadeReservas(){
+    	return this.quantidadeReservas;
+    }
 
     @Override
     public void addObservador(Usuario usuario) {
-            observadores.add(usuario);
+    	observadores.add(usuario);
     }
 
     @Override
@@ -65,8 +63,8 @@ public class Livro implements SujeitoObservavel{
     public void notificarObservador() {
         for (int i = 0; i < observadores.size(); i++) {
             Usuario usuario = (Usuario)observadores.get(i);
-		usuario.update();
+            usuario.update();
         }
     }
-	}
+}
 	
