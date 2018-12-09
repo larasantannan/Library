@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 
 public class IUSistema {
 
+        Estante estante;
 	private static HashMap<String, Object> cmds = new HashMap<String, Object>();
 	
 	private static void addCmds() {
@@ -57,7 +58,7 @@ public class IUSistema {
 	}
 	
 	public static void main(String[] args) {
-		
+            
 		addCmds();
 		
 		String[] parametros;
@@ -69,6 +70,7 @@ public class IUSistema {
 	    tratarDados(parametros);
 	    
 	    executarComando(parametros);
+            
 	}
 			
 }

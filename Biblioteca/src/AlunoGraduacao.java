@@ -5,10 +5,6 @@
  */
 package Biblioteca.src;
 
-/**
- *
- * @author Lara
- */
 public class AlunoGraduacao implements Usuario{
     
     private String id;
