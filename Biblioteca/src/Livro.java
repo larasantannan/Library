@@ -1,26 +1,26 @@
 import java.util.ArrayList;
 
-public class Livro implements SujeitoObservavel {
+public class Livro {
 
 	private String id;
 	private String titulo;
 	private String editora;
-	private String[] autores;
+	private String autores;
 	private String edicao;
 	private String anoPublicacao;
-    private int quantidadeReservas;
-    private int exemplares;
-    private ArrayList observadores;
-    
-	public Livro(String codigo, String titulo, String editora, String[] autores, String edicao, String anoPublicacao) {
+
+        // private int quantidadeReservas;
+	
+	public Livro(String codigo, String titulo, String editora, String autores, String edicao, String anoPublicacao) {
 		
 		this.id = codigo;
 		this.titulo = titulo;
 		this.editora = editora;
 		
-		for (int i = 0; i < autores.length; i++) {
+		/*for (int i = 0; i < autores.length; i++) {
 			this.autores[i] = autores[i];
-		}
+		}*/
+                this.autores = autores;
 		
 		this.edicao = edicao;
 		this.anoPublicacao = anoPublicacao;
@@ -30,41 +30,9 @@ public class Livro implements SujeitoObservavel {
 	public String getId() {
 		return this.id;
 	}
-  
+	
 	public String getTitulo() {
 		return this.titulo;
-	}
-        
-    public void setQuantidadeReservas(){
-    	this.quantidadeReservas++;
-        if(this.quantidadeReservas > 2){
-        	this.notificarObservador();
-        }
-    }
-        
-    public int getQuantidadeReservas(){
-    	return this.quantidadeReservas;
-    }
-
-    @Override
-    public void addObservador(Usuario usuario) {
-    	observadores.add(usuario);
-    }
-
-    @Override
-    public void removerObservador(Usuario usuario) {
-        int i = observadores.indexOf(usuario);
-		if (i >= 0) {
-			observadores.remove(i);
-                }
-    }
-
-    @Override
-    public void notificarObservador() {
-        for (int i = 0; i < observadores.size(); i++) {
-            Usuario usuario = (Usuario)observadores.get(i);
-            usuario.update();
-        }
-    }
-}
+  }
+}  
 	

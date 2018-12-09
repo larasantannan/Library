@@ -1,5 +1,6 @@
 
 public class AlunoGraduacao implements Usuario {
+
     
     private String id;
     private String nome;
