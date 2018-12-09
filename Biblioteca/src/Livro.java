@@ -1,9 +1,6 @@
-package Biblioteca.src;
-
 import java.util.ArrayList;
 
-
-public class Livro{
+public class Livro {
 
 	private String id;
 	private String titulo;
@@ -11,6 +8,7 @@ public class Livro{
 	private String autores;
 	private String edicao;
 	private String anoPublicacao;
+
         // private int quantidadeReservas;
 	
 	public Livro(String codigo, String titulo, String editora, String autores, String edicao, String anoPublicacao) {
@@ -35,8 +33,6 @@ public class Livro{
 	
 	public String getTitulo() {
 		return this.titulo;
-	}
-       
-}
-
+  }
+}  
 	
